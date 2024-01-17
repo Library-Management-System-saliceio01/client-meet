@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="form">
+    <app-task-form (onFormChange)="onFormChange($event)"></app-task-form>
+  </div>
+  <div class="action">
+    <button (click)="onCreateTask()">Crear Tarea</button>
+  </div>
+  <div class="task-table">
+    <app-task-table [data]="tareas"></app-task-table>
+  </div>
+</div>

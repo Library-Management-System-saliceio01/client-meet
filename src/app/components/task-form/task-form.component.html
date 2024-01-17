@@ -1,0 +1,20 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Ex. Pizza" [formControl]="nombre">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Fecha</mat-label>
+    <input matInput [matDatepicker]="picker" [formControl]="fecha">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Estado</mat-label>
+    <mat-select [formControl]="estado">
+      @for (status of statusArray; track $index) {
+      <mat-option [value]="status">{{status.toUpperCase()}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</form>

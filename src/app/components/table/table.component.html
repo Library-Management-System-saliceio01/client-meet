@@ -1,0 +1,15 @@
+<table>
+  <!-- Encabezado de la tabla -->
+  <tr>
+    <th *ngFor="let column of tableConfig.columns">
+      {{ column.caption }}
+    </th>
+  </tr>
+
+  <!-- Cuerpo de la tabla -->
+  <tr *ngFor="let rowData of tableConfig.data">
+    <td *ngFor="let column of tableConfig.columns">
+      {{ rowData[column.key] }}
+    </td>
+  </tr>
+</table>
